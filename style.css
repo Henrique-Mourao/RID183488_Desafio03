@@ -1,0 +1,333 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 10px;
+    font-family: 'Rubik', sans-serif;
+    background: #F5F9FF;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+main {
+    width: 100%;
+    max-width: 50rem;
+    background: #fff;
+    border-radius: .8rem;
+    padding: 3.2rem 2.4rem;
+    box-shadow: 0 4px 24px rgba(44,112,253,0.08);
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    color: #11175E;
+    text-align: center;
+    font-weight: 700;
+}
+
+#create-todo{
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+#create-todo-form {
+    display: flex;
+    gap: .8rem;
+    width: 100%;
+    align-items: center;
+}
+
+.input-description {
+    height: 3.6rem;
+    width: 100%;
+    font-size: 1.6rem;
+    border-radius: .4rem;
+    border: 1px solid #bfc7d1;
+    padding: 1rem 1.5rem;
+    outline: none;
+    transition: border-color 0.2s;
+    background: #f8fafc;
+}
+
+.input-description:focus {
+    border-color: #2D70FD;
+    background: #fff;
+}
+
+.add-task-btn, #save-task {
+    width: 10rem;
+    height: 3.6rem;
+    background: #2D70FD;
+    border: none;
+    border-radius: .4rem;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 500;
+    transition: background 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-task-btn:hover, #save-task:hover {
+    background: #0a45b0;
+    transform: translateY(-2px) scale(1.03);
+}
+
+.add-task-btn:active, #save-task:active {
+    background: #1746a0;
+    transform: scale(0.97);
+}
+
+.add-task-btn:disabled, #save-task:disabled {
+    background: #d9d9d9;
+    color: #888;
+    cursor: not-allowed;
+}
+
+.todo-list-section {
+    margin-bottom: 2rem;
+    min-height: 5rem;
+}
+
+#todo-list {
+    padding: 0;
+    margin: 0;
+    height: 23rem;
+    overflow-y: auto;
+    list-style: none;
+}
+
+#todo-list > li {
+    padding: 1.2rem 1.6rem;
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    border: 2px solid #e3e6ef;
+    border-radius: .8rem;
+    background: #f8fafc;
+    box-shadow: 0 2px 8px rgba(44,112,253,0.04);
+    transition: background 0.2s, border-color 0.2s;
+}
+
+#todo-list > li:last-child {
+    margin-bottom: 0;
+}
+
+.task-description {
+    font-size: 1.6rem;
+    color: #333;
+    margin-right: 1rem;
+    flex-grow: 1;
+    word-break: break-word;
+}
+
+.task-etiqueta {
+    border: 1px solid #2D70FD;
+    border-radius: 8px;
+    padding: 0.2rem 0.8rem;
+    font-size: 1.2rem;
+    color: #2D70FD;
+    background: #eaf2fe;
+    margin-top: 0.3rem;
+    display: inline-block;
+    width: auto;
+    min-width: 80px;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.concluir-btn {
+    width: 6rem;
+    height: 2.6rem;
+    color: #fff;
+    background-color: #2D70FD;
+    border: none;
+    border-radius: .4rem;
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: 500;
+    transition: background 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.concluir-btn:hover {
+    background-color: #0a45b0;
+    transform: scale(1.05);
+}
+
+.concluir-btn:active {
+    background-color: #1746a0;
+    transform: scale(0.97);
+}
+
+.concluir-btn.concluido {
+    background-color: #4CAF50;
+    border: 2px solid #388E3C;
+    font-size: 1.8rem;
+    font-weight: bold;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(76,175,80,0.15);
+}
+
+.task-concluida {
+    background-color: #e8f5e9;
+    border-color: #4CAF50;
+}
+
+.text-taxado {
+    text-decoration: line-through;
+    color: #888;
+}
+
+#tasks-progress {
+    font-size: 1.6rem;
+    color: #2D70FD;
+    font-weight: 500;
+    margin-left: 1rem;
+}
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.6rem;
+    margin-top: 1.6rem;
+}
+
+@media screen and (max-width: 680px) {
+    main {
+        padding: 2rem 1rem;
+        max-width: 100vw;
+    }
+
+    h1 {
+        font-size: 2.6rem;
+    }
+
+    #create-todo-form {
+        flex-direction: column;
+        gap: .6rem;
+        align-items: stretch;
+    }
+
+    .input-description {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .add-task-btn, #save-task {
+        width: 100%;
+        font-size: 2rem;
+        height: 4rem;
+    }
+
+    .todo-list-section > ul > li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+
+    .button-container {
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: 0.5rem;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.4rem;
+        background-color: #eaf2fe;
+        border-radius: .8rem;
+        padding: 1rem 0;
+    }
+}
+
+@media (max-width: 600px) {
+    #todo-list > li,
+    .todo-list-section > ul > li {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: auto;
+        padding: 1rem;
+        word-break: break-word;
+    }
+    .task-description,
+    .task-etiqueta {
+        max-width: 100%;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        white-space: normal;
+        font-size: 1rem;
+    }
+    .task-etiqueta {
+        min-width: 0;
+        width: 100%;
+        text-align: left;
+        box-sizing: border-box;
+        display: block;
+    }
+    .input-description {
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    #create-todo-form {
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    .button-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.7rem;
+        margin-top: 1rem;
+    }
+    .concluir-btn {
+        width: 90%;
+        min-width: 0;
+        font-size: 1.4rem;
+        box-sizing: border-box;
+        text-align: center;
+        white-space: normal;
+        margin: 0 auto;
+        height: 3.2rem;
+        border-radius: .6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .concluir-btn.concluido {
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 50%;
+        font-size: 2rem;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+}
